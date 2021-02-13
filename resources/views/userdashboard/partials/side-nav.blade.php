@@ -38,9 +38,9 @@
                         <i class="far fa-user"></i> My Order
                     </a>
                 </li> --}}
-                <li>
-                    <a href="">
-                        <i class="far fa-user"></i> Setting
+                <li class="{{ (request()->is('paymentHistory')) ? 'active' : '' }}">
+                    <a href="{{ route('paymentHistory') }}">
+                        <i class="far fa-user"></i> History
                     </a>
                 </li>
                 {{-- <li>

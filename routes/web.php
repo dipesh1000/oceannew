@@ -94,7 +94,9 @@ Route::group([
     Route::any('/esewa/success', 'EsewaController@success');
     Route::any('/esewa/failure', 'EsewaController@failure');
     Route::any('/esewa/response', 'EsewaController@response');
-    Route::get('/paymentHistory', 'DashboardController@paymentHistory');
+    Route::get('/paymentHistory', 'DashboardController@paymentHistory')->name('paymentHistory');
+    Route::get('/paymentHistory/{id}', 'DashboardController@viewSinglePaymentHistory')->name('viewInvoice');
+    Route::get('/printInvioce/{id}', 'DashboardController@printSinglePaymentHistory')->name('printInvioce');
     //save course for later
     Route::get('/save-course-later', 'SavedCourseController@getSavedCourse')->name('saveCourseLater');
     Route::get('/save-course-later/delete/{id}', 'SavedCourseController@destroy')->name('saveCourseLater.delete');

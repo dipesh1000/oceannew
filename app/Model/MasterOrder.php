@@ -38,6 +38,6 @@ class MasterOrder extends Model
     }
     public function orderDetails()
     {
-        return $this->hasOne(Order::class, 'master_order_id');
+        return $this->hasMany(Order::class, 'master_order_id');
     }
 }
