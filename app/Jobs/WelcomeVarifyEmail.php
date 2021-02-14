@@ -15,15 +15,17 @@ class WelcomeVarifyEmail implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
-    private $user;
+    public $user;
+    public $code;
     /**
      * Create a new job instance.
      *
      * @return void
      */
-    public function __construct(User $user)
+    public function __construct(User $user,$code)
     {
         $this->user = $user;
+        $this->code = $code;
     }
 
     /**
@@ -33,6 +35,6 @@ class WelcomeVarifyEmail implements ShouldQueue
      */
     public function handle()
     {
-        Mail::to($this->user)->send(new WelcomeUserMail());
+        Mail::to($this->user)->send(new WelcomeUserMail($this->user,$this->code));
     }
 }
