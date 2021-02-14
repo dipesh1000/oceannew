@@ -30,7 +30,13 @@ Route::group(
         Route::get('categories','CategoryController@index');
         Route::get('/categories/{slug}','CategoryController@getCategory');
         Route::get('search','SearchController@search');
-        Route::post('contact-us','ContactController@contact');
+        Route::post('contact-us','ContactController@storeContact');
+        Route::get('authors','PostTypeController@getAuthor');
+        Route::get('distributor','PostTypeController@getDistributors');
+        Route::get('aboutus','PostTypeController@aboutUs');
+        Route::post('forgot-password', 'AuthController@resetPassword');
+        Route::post('update-password','AuthController@updatePassword');
+        
         Route::group(
         [
             'middleware'=>'auth:api'
