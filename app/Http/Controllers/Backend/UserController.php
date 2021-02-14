@@ -91,9 +91,9 @@ class UserController extends Controller
                 imageDelete($user);
                 $user->image = imageupload('/upload/user/', $request->file('image'));
             }
-            $response = $user->Update();
+            $response = $user->update();
             if($response){
-                $user->roles()->attach($request->role);
+                $user->roles()->sync($request->role);
                 if ($request->activate){
                     Activation::create($user);
                     return redirect()->back()->with('success', 'User Successfully Updated and Activate.');
