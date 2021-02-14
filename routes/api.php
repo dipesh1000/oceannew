@@ -19,7 +19,6 @@ Route::group(
     ],function () {
         Route::post('/register', 'AuthController@register');
         Route::post('/login', 'AuthController@login');
-        
         Route::get('/books', 'BooksController@index');
         Route::get('/book/{slug}', 'BooksController@getBookBySlug');
 
@@ -31,10 +30,12 @@ Route::group(
         Route::get('categories','CategoryController@index');
         Route::get('/categories/{slug}','CategoryController@getCategory');
         Route::get('search','SearchController@search');
+        Route::post('contact-us','ContactController@contact');
         Route::group(
         [
             'middleware'=>'auth:api'
         ],function(){
+            Route::post('logout','AuthController@logout');
             Route::get('all-course','CourseController@getAllCourses');
             Route::post('/save-course','CourseController@savedCourse');
             Route::get('/delete-course','CourseController@deleteCourse');

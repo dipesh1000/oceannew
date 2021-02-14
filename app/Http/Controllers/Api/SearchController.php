@@ -18,10 +18,7 @@ class SearchController extends Controller
         $video = Video::where('title','like','%'.$request->data.'%')->get();
         $package = Package::where('title','like','%'.$request->data.'%')->get();
         $alldatas = $book->merge($video)->merge($package);
-        return response()->json(['data'=>$alldatas]);
-
-
-        
+        return response()->json(['data'=>$alldatas]);        
         
     }
 }
