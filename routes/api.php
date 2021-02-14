@@ -30,6 +30,7 @@ Route::group(
         Route::get('/package/{slug}', 'PackageController@getPackageBySlug');
         Route::get('categories','CategoryController@index');
         Route::get('/categories/{slug}','CategoryController@getCategory');
+        Route::get('search','SearchController@search');
         Route::group(
         [
             'middleware'=>'auth:api'
@@ -42,11 +43,12 @@ Route::group(
             Route::get('activate/user','StudentController@activateUser');
             Route::get('myOrders','OrderController@myOrder');
             Route::post('orderStore','OrderController@orderStore');
+
         });
 
         //reset password
         //logout
-        //notifications
+        //email notifications
         //search
       
     }); 
