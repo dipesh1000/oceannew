@@ -50,6 +50,9 @@ Route::group(
             Route::get('activate/user','StudentController@activateUser');
             Route::get('myOrders','OrderController@myOrder');
             Route::post('orderStore','OrderController@orderStore');
+            Route::get('dashboardDetails', 'StudentDashboardController@dashboardDetails');
+            Route::post('/feedback', 'FeedbackController@create')->name('feedback.create');
+            // Route::post('/feedback/update', 'FeedbackController@update')->name('feedback.update');
 
         });
 

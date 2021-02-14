@@ -33,32 +33,26 @@ class BooksController extends Controller
                 'categories' => $context_cat 
             ];
             return $this->success("All Books", $context); 
-
-
-        // } catch (\Illuminate\Database\QueryException $ex) {
-        //     return $this->error($ex->getMessage());
-        // }
-        // catch (\Exception $e) {
-        //     return $this->error($e->getMessage());
-        // }
+            
     }
 
     public function getBookBySlug($slug)
     {
+       
         try {
             $book = $this->book->getBookBySlug($slug);
-
-            // $courseReview = $book->courseItem;
-            // return $courseReview;
 
             $similarBooks = $this->book->getSimilarBooks($slug);
 
             $child_cat = $this->book->getRelatedCategories($slug);
-
+            
+            $review = $book->courseItem;
+            
             return [
                 $this->success("Book", $book),
                 $this->success("similarBooks", $similarBooks),
-                $this->success("childCategories", $child_cat)
+                $this->success("childCategories", $child_cat),
+                $this->success("Review", $review)
             ];
         } catch (\Illuminate\Database\QueryException $ex) {
             return $this->error($ex->getMessage());

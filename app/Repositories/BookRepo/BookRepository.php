@@ -39,7 +39,6 @@ class  BookRepository implements BookInterface {
     {
         $book = Book::where('slug', $slug)->first();
         $book->type = 'book';
-        
         return $book;
     }
 

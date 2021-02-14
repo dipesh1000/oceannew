@@ -78,7 +78,6 @@ class AuthController extends Controller
                 'token_type' => 'bearer',
                 'user' => $user
             ];
-
             return response()->json(compact('token'));
         }
     public function resetPassword(Request $request)

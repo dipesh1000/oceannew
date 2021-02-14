@@ -59,6 +59,7 @@ class BooksController extends Controller
         $child_cat = Category::with('childs.childs')
             ->where('id', $parent_cat->id)
             ->first();
+
         if ($book->courseItem->avg('star')) {
             $avgRating = $book->courseItem->avg('star');
             $book->rating = $avgRating;
@@ -66,6 +67,7 @@ class BooksController extends Controller
             $avgRating = 2;
             $book->rating = $avgRating;
         }
+        
         return view('frontend.book.single', compact('book', 'similarBooks', 'child_cat'));
     }
 }

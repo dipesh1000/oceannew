@@ -42,9 +42,13 @@ class PackageController extends Controller
 
             $similarPackages = $this->package->getSimilarPackages($slug);
 
-            return [$this->success("Packages", $package), 
+            $review = $package->courseItem;
+
+            return [
+                    $this->success("Packages", $package), 
                     $this->success("Similar Packages", $similarPackages),
-                    $this->success("Course Assign", $packageAssignCourse)
+                    $this->success("Course Assign", $packageAssignCourse),
+                    $this->success("Review", $review)
         ];
 
         } 

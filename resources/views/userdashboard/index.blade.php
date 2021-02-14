@@ -24,106 +24,78 @@
                         <div class="n_header">
                             Notification
                         </div>
-                        <div class="n_list">
-                            <div class="n_list_icon">
-                                <a href="">
-                                    <li>
-                                        <i class="far fa-calendar"></i>
-                                    </li>
-                                </a>
-                            </div>
-                            <div class="n_list_text">
-                                <div class="n_list_name">
-                                    Maryam Amiri
+                        @if (count($books) > 0)
+                            @foreach ($books as $book)
+                            <div class="n_list">
+                                <div class="n_list_icon">
+                                    <a href="{{ route('book.single', $book->slug) }}">
+                                        <li>
+                                            <i class="far fa-calendar"></i>
+                                        </li>
+                                    </a>
                                 </div>
-                                <div>
-                                    Check New Admin Dashboard..
-                                </div>
-                                <div>
-                                    Just Now
-                                </div>
-                            </div>
-                        </div>
-                        <div class="n_list">
-                            <div class="n_list_icon">
-                                <a href="">
-                                    <li>
-                                        <i class="far fa-calendar"></i>
-                                    </li>
-                                </a>
-                            </div>
-                            <div class="n_list_text">
-                                <div class="n_list_name">
-                                    Maryam Amiri
-                                </div>
-                                <div>
-                                    Check New Admin Dashboard..
-                                </div>
-                                <div>
-                                    Just Now
+                                <div class="n_list_text">
+                                    <div class="n_list_name">
+                                        {{ $book->title }}
+                                    </div>
+                                    <div>
+                                        {{ $book->author }}
+                                    </div>
+                                    <div>
+                                        {{ $book->updated_at->diffForHumans() }}
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="n_list">
-                            <div class="n_list_icon">
-                                <a href="">
-                                    <li>
-                                        <i class="far fa-calendar"></i>
-                                    </li>
-                                </a>
-                            </div>
-                            <div class="n_list_text">
-                                <div class="n_list_name">
-                                    Maryam Amiri
+                            @endforeach
+                        @endif
+                        @if (count($videos) > 0)
+                            @foreach ($videos as $video)
+                            <div class="n_list">
+                                <div class="n_list_icon">
+                                    <a href="{{ route('video.single', $video->slug) }}">
+                                        <li>
+                                            <i class="far fa-calendar"></i>
+                                        </li>
+                                    </a>
                                 </div>
-                                <div>
-                                    Check New Admin Dashboard..
-                                </div>
-                                <div>
-                                    Just Now
-                                </div>
-                            </div>
-                        </div>
-                        <div class="n_list">
-                            <div class="n_list_icon">
-                                <a href="">
-                                    <li>
-                                        <i class="far fa-calendar"></i>
-                                    </li>
-                                </a>
-                            </div>
-                            <div class="n_list_text">
-                                <div class="n_list_name">
-                                    Maryam Amiri
-                                </div>
-                                <div>
-                                    Check New Admin Dashboard..
-                                </div>
-                                <div>
-                                    Just Now
+                                <div class="n_list_text">
+                                    <div class="n_list_name">
+                                        {{ $video->title }}
+                                    </div>
+                                    <div>
+                                        {{ $video->author }}
+                                    </div>
+                                    <div>
+                                        {{ $video->updated_at->diffForHumans() }}
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="n_list">
-                            <div class="n_list_icon">
-                                <a href="">
-                                    <li>
-                                        <i class="far fa-calendar"></i>
-                                    </li>
-                                </a>
+                            @endforeach
+                        @endif
+                        @if (count($packages) > 0)
+                            @foreach ($packages as $package)
+                            <div class="n_list">
+                                <div class="n_list_icon">
+                                    <a href="{{ route('package.single', $package->slug) }}">
+                                        <li>
+                                            <i class="far fa-calendar"></i>
+                                        </li>
+                                    </a>
+                                </div>
+                                <div class="n_list_text">
+                                    <div class="n_list_name">
+                                        {{ $package->title }}
+                                    </div>
+                                    <div>
+                                        {{ $package->author }}
+                                    </div>
+                                    <div>
+                                        {{ $package->updated_at->diffForHumans() }}
+                                    </div>
+                                </div>
                             </div>
-                            <div class="n_list_text">
-                                <div class="n_list_name">
-                                    Maryam Amiri
-                                </div>
-                                <div>
-                                    Check New Admin Dashboard..
-                                </div>
-                                <div>
-                                    Just Now
-                                </div>
-                            </div>
-                        </div>
+                            @endforeach
+                        @endif
                     </div>
                 </div>
             </div>
