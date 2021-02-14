@@ -44,10 +44,13 @@ class VideoController extends Controller
 
             $similarVideos = $this->video->getSimilarVideos($slug);
 
+            $review = $video->courseItem;
+
         return [
             $this->success("Video", $video), 
             $this->success('ChildCategories', $child_cat), 
-            $this->success('Similar Videos', $similarVideos)
+            $this->success('Similar Videos', $similarVideos),
+            $this->success("Review", $review)
             ];
 
         } 

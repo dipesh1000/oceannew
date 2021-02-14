@@ -97,6 +97,7 @@ Route::group([
     Route::get('/paymentHistory', 'DashboardController@paymentHistory')->name('paymentHistory');
     Route::get('/paymentHistory/{id}', 'DashboardController@viewSinglePaymentHistory')->name('viewInvoice');
     Route::get('/printInvioce/{id}', 'DashboardController@printSinglePaymentHistory')->name('printInvioce');
+    Route::get('/dashboardNotification', 'DashboardController@dashboardNotication')->name('notification');
     //save course for later
     Route::get('/save-course-later', 'SavedCourseController@getSavedCourse')->name('saveCourseLater');
     Route::get('/save-course-later/delete/{id}', 'SavedCourseController@destroy')->name('saveCourseLater.delete');

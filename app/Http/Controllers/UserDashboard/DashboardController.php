@@ -3,8 +3,12 @@
 namespace App\Http\Controllers\UserDashboard;
 
 use App\Http\Controllers\Controller;
+use App\Model\Book;
 use App\Model\MasterOrder;
 use App\Model\Order;
+use App\Model\Package;
+use App\Model\Video;
+use App\Repositories\DashboardRepo\DashboardRepository;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -14,10 +18,19 @@ use Illuminate\Support\Facades\File;
 
 class DashboardController extends Controller
 {
+    public $dash;
+    public function __Construct(DashboardRepository $dash)
+    {
+        $this->dash = $dash;
+    }
     public function index()
     {
         $users = Sentinel::getUser();
-        return view('userdashboard.index', compact('users'));
+        $books = $this->dash->getLatestBooks();
+        $videos = $this->dash->getLatestVideos();
+        $packages = $this->dash->getLatestPackages();
+        // return $books;
+        return view('userdashboard.index', compact('users', 'books', 'videos', 'packages'));
     }
 
     public function myOrders()
@@ -67,5 +80,4 @@ class DashboardController extends Controller
         }
         return view('userdashboard.order.printInvoice', compact('masterOrder', 'user', 'courses'));
     }
-   
 }
