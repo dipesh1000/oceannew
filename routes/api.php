@@ -43,6 +43,11 @@ Route::group(
             Route::get('myOrders','OrderController@myOrder');
             Route::post('orderStore','OrderController@orderStore');
         });
+
+        //reset password
+        //logout
+        //notifications
+        //search
       
     }); 
 
