@@ -1056,6 +1056,15 @@ padding: 60px 0px;
 	.course_container {
 		padding: 40px 0;
 		background-color: #f4f6f8;
+		.nav-tabs {
+            border-bottom: 1px solid rgba(34, 36, 38, 0.15) !important;
+            li a {
+                font-size: 20px;
+                font-weight: bold;
+                font-family: "Poppins", sans-serif;
+                color: #647b9c;
+            }
+        }
 		.course_content_container {
 			margin-bottom: 40px;
 			.course_content_header {
@@ -1517,6 +1526,7 @@ padding: 60px 0px;
 	margin-top: 110px;
 	.asider{
 		box-shadow: 2px 0px 8px #d7dcde;
+		padding-left: 0px;
 	}
 	.pagination{
 		justify-content: center;
@@ -1525,6 +1535,7 @@ padding: 60px 0px;
 	aside {
 		.aside_header {
 			padding: 8px 15px;
+			padding-left: 30px;
 			font-weight: 500;
 			color: #fff;
 			font-size: 18px;
@@ -1543,6 +1554,9 @@ padding: 60px 0px;
 			span:nth-child(2) {
 				color: #008fd5;
 				cursor: pointer;
+			}
+			li{
+			    padding-left: 15px;
 			}
 		}
 

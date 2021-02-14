@@ -37,14 +37,20 @@
                                 <tbody>
                                     @foreach ($users_order as $orderItem)
                                     <tr>
-                                      <th scope="row">{{ date('d-m-Y', strtotime( $orderDate )) }}</th>
+                                      <th scope="row">{{ date('d-m-Y', strtotime( $orderItem->created_at )) }}</th>
                                       <td>{{ $orderItem->invoice_no }}</td>
-                                      <td>{{ $courseTitle }}</td>
+                                      <td>
+                                        <ul>
+                                          @foreach ($orderItem->orderDetails as $item)
+                                            <li>{{ $item->courseTitle }}</li>
+                                          @endforeach
+                                        </ul>
+                                      </td>
                                       <td>{{ $orderItem->grandTotal }}</td>
                                       <td>{{ $orderItem->payment_method }}</td>
                                       <td>
-                                          <button type="button" class="btn btn-outline-dark btn-sm" title="print invoice"><i class="fa fa-print"></i></button>
-                                          <button type="button" class="btn btn-outline-dark btn-sm" title="view"><i class="fa fa-eye"></i></button>
+                                          <a href="{{ route('printInvioce', $orderItem->id) }}" class="btn printInvoice btn-outline-dark btn-sm" title="print invoice"><i class="fa fa-print"></i></a>
+                                          <a href="{{ route('viewInvoice', $orderItem->id) }}" target="_blank" class="btn btn-outline-dark btn-sm" title="view"><i class="fa fa-eye"></i></a>
                                           <button type="button" class="btn btn-outline-dark btn-sm" title="download"><i class="fa fa-download"></i></button>
                                       </td>
                                     </tr>
@@ -59,3 +65,13 @@
     </div>
 </div>
 @endsection
+@push('scripts')
+  <script>
+    $(document).ready(function() {
+        $('.printInvoice').click(function(event) {
+            window.open($(this).attr("href"), "popupWindow", "width=1000,height=1000,scrollbars=yes");
+            return false;
+        });
+  });
+  </script>
+@endpush

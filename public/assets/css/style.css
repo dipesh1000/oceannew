@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&display=swap");
+
 body {
   margin: 0;
   padding: 0;
@@ -393,7 +394,6 @@ footer .backtop {
 .navbar-fixed .primary-navbar .primary-content .second-navbar-wrapper li {
   font-weight: 600;
   font-size: 14px;
-  text-transform: uppercase;
 }
 
 .navbar-fixed .primary-navbar .primary-content .second-navbar-wrapper li a {
@@ -508,6 +508,7 @@ footer .backtop {
   display: none;
 }
 
+/*For Home Page Search Icon*/
 .banner .navbar-wrapper .primary-navbar .primary-content #search-icon {
   background-color: #008fd5;
   padding: 6px 11px;
@@ -523,13 +524,43 @@ footer .backtop {
   border: 1px solid #008fd5;
   display: none;
   font-size: 14px;
-  top: 30px;
+  top: 44px;
   right: 10px;
 }
 
 .banner .navbar-wrapper .primary-navbar .primary-content .search-bar:focus {
   outline: none;
 }
+/*END*/
+
+/*For other pages search Icon*/
+
+.navbar-fixed .primary-content form {
+    position:relative;
+}
+.navbar-fixed .primary-content #search-icon {
+  background-color: #008fd5;
+  padding: 6px 11px;
+  border-radius: 3px;
+}
+
+.navbar-fixed .primary-content .search-bar {
+  position: absolute;
+  border-radius: 4px;
+  padding: 5px 10px;
+  margin-bottom: 5px;
+  margin-right: 5px;
+  border: 1px solid #008fd5;
+  display: none;
+  font-size: 14px;
+  top: 30px;
+  right: 8px;
+}
+
+.navbar-fixed .primary-content .search-bar:focus {
+  outline: none;
+}
+/*END*/
 
 .banner .navbar-wrapper.fixed-navbar {
   -webkit-box-shadow: 0px 2px 20px #6992a6;
@@ -776,6 +807,50 @@ footer .backtop {
   transition: all ease 0.4s;
   border: 1px solid #e8ebf1;
   background: #ffffff;
+}
+
+#index_page .our_package_container .course_container .package-add-to-cart{
+    text-align: center;
+    width: fit-content;
+    margin: 0 auto;
+    margin-bottom: 15px;
+}
+
+#index_page .our_package_container .course_container .package-add-to-cart a{
+    color: white;
+    background: #FFA500;
+    border-radius: 5px;
+    padding: 5px 15px;
+    font-size: 14px;
+    font-family: sans-serif;
+}
+
+#index_page .our_package_container .course_container .package-add-to-cart a:hover{
+    background: #e69400;
+}
+
+.course_container .nav-tabs {
+    border-bottom: 1px solid rgba(34, 36, 38, 0.15) !important;
+}
+
+.course_container .nav-tabs li a {
+    font-size: 20px;
+    font-weight: bold;
+    font-family: "Poppins", sans-serif;
+    color: #647b9c;
+}
+
+.course_container .nav>li>a{
+    padding: 10px 30px !important;
+}
+
+.course_container .tab-content{
+    margin-top: 20px;
+    margin-bottom: 40px;
+    box-shadow: 0 1px 2px 0 rgba(34, 36, 38, 0.15);
+    border: 1px solid rgba(34, 36, 38, 0.15);
+    border-radius: 5px;
+    padding: 30px;
 }
 
 #index_page .our_package_container .course_container .image_container {
@@ -1941,7 +2016,7 @@ footer .backtop {
 }
 
 #product_page .book_list {
-  font-size: 14px;
+  font-size: 12px;
   margin: 20px 10px 40px 10px;
 }
 
@@ -1959,7 +2034,7 @@ footer .backtop {
 }
 
 #product_page .book_list .book_price {
-  margin-top: 10px;
+  margin-top: 0px;
   padding-left: 5px;
   border-left: 5px solid #0e5bb3;
 }
@@ -1980,7 +2055,8 @@ footer .backtop {
 #product_page .book_list .book_description {
   margin-top: 7px;
   line-height: 17px;
-  color: #6d6d6f;
+  color: #000000;
+  font-size: 14px;
 }
 
 #product_page .book_list .book_button {
@@ -2017,6 +2093,43 @@ footer .backtop {
 #product_page .page-link {
   color: #5e5e5e;
 }
+
+/* new changes Books side nav*/
+.book-nav-below{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-top: 10px;
+}
+.book-nav-below .book_button_view{
+    margin-top: 0px;
+}
+.book-nav-below .book_button_view .btn_addcart{
+    background-color: #0e5bb3;
+    text-align: center;
+    color: #fbfcfc;
+    border-radius: 5px;
+    padding: 5px 8px;
+    width: 100%;
+    display: block;
+}
+.book-nav-below .book_button_view .btn_addcart:hover{
+    background-color: #093c77;
+}
+.book-nav-below .book-add-cart .btn_addcart{
+    background-color: orange;
+    text-align: center;
+      color: #fbfcfc;
+      border-radius: 5px;
+      padding: 5px 8px;
+      display: block;
+      margin-left: 10px;
+}
+.book-nav-below .book-add-cart .btn_addcart:hover{
+    background-color: #cc8400;
+}
+/*end*/
+
 .savedcourses-content {
   background: #ffffff;
   width: 100%;
@@ -2417,7 +2530,7 @@ footer .backtop {
     border-color: #074da2;
   }
   #product_page .book_list {
-    font-size: 12px;
+    font-size: 14px;
   }
   #product_page .book_list .book_button {
     font-size: 10px;
@@ -3167,9 +3280,11 @@ footer .backtop {
   z-index: 999;
   min-width: 400px;
   background: transparent;
-  right: 10px;
+  right: 5px;
+  /*top:45px;*/
   max-height: 450px;
-  overflow: hidden;
+  /*box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.075);*/
+  border-radius: 5px;
 }
 
 .cart-in-navbar .cart-dropdown-content .cart-dropdown-content-wrapper {
@@ -3181,6 +3296,67 @@ footer .backtop {
   overflow-y: auto;
   -webkit-box-shadow: 0px 2px 3px 0px #b9b9b9;
           box-shadow: 0px 2px 3px 0px #b9b9b9;
+          border-radius: 5px;
+}
+
+
+#index_page .cart-in-navbar .cart-dropdown-content .cart-dropdown-content-wrapper .mini-cart-bottom{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-top: 15px;
+
+}
+
+#index_page .cart-in-navbar .cart-dropdown-content .cart-dropdown-content-wrapper .cart-dropdown-total-price{
+  display: flex;
+  justify-content: space-between;
+  width: 100%; 
+  padding-right: 55px;
+}
+
+#index_page .cart-in-navbar .cart-dropdown-content .cart-dropdown-content-wrapper .cart-dropdown-single .cart-dropdown-single-text {
+  font-weight:600;
+}
+#index_page .cart-in-navbar .cart-dropdown-content .cart-dropdown-content-wrapper .cart-dropdown-single .cart-dropdown-single-text a {
+  width: 200px;
+  max-width: 200px;
+  font-size: 14px;
+}
+
+#index_page .cart-in-navbar .cart-dropdown-content .cart-dropdown-content-wrapper .cart-dropdown-single .cart-dropdown-total-price{
+  font-size: 14px;
+  font-weight: 600;
+}
+
+
+#index_page .cart-in-navbar .cart-dropdown-content .cart-dropdown-content-wrapper .cart-dropdown-single .cart-cross a{
+  width: 200px;
+  max-width: 200px;
+  padding: 0px 15px;
+}
+
+#index_page .cart-in-navbar .cart-dropdown-content .cart-dropdown-content-wrapper .cart-dropdown-single .cart-cross i{
+  color:black;
+}
+
+.cart-in-navbar .cart-dropdown-content .cart-dropdown-content-wrapper .mini-cart-bottom{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-top: 15px;
+
+}
+
+.cart-in-navbar .cart-dropdown-content .cart-dropdown-content-wrapper .cart-dropdown-total-price{
+    display: flex;
+    justify-content: space-between;
+    width: 100%; 
+    padding-right: 55px;
+}
+
+.cart-in-navbar .cart-dropdown-content .cart-dropdown-content-wrapper .cart-dropdown-total-price .final-price{
+    color: black;
 }
 
 .cart-in-navbar .cart-dropdown-content .cart-dropdown-content-wrapper .cart-dropdown-single {
@@ -3194,11 +3370,12 @@ footer .backtop {
           flex-direction: row;
   padding: 20px 20px;
   border-bottom: 1px solid #bebebe;
+  align-items: center;
 }
 
 .cart-in-navbar .cart-dropdown-content .cart-dropdown-content-wrapper .cart-dropdown-single .cart-dropdown-single-image {
-  width: 50px;
-  height: 50px;
+  width: 65px;
+  height: 65px;
   overflow: hidden;
 }
 
@@ -3213,6 +3390,24 @@ footer .backtop {
   padding: 5px;
   padding-top: 0px;
   font-size: 14px;
+  display: flex;
+  /*justify-content: space-between;*/
+  width: 100%;
+}
+
+.cart-in-navbar .cart-dropdown-content .cart-dropdown-content-wrapper .cart-dropdown-single .cart-dropdown-single-text a{
+    width: 200px;
+    max-width: 200px;
+}
+
+
+.cart-in-navbar .cart-dropdown-content .cart-dropdown-content-wrapper .cart-dropdown-single .cart-dropdown-single-text .cart-cross a{
+    color: #000000;
+}
+
+.cart-in-navbar .cart-dropdown-content .cart-dropdown-content-wrapper .cart-dropdown-single .cart-dropdown-single-text .cart-dropdown-single-price{
+    min-width: 70px;
+    text-align: right;
 }
 
 .cart-in-navbar .cart-dropdown-content .cart-dropdown-content-wrapper .cart-dropdown-single .cart-dropdown-single-text .cart-dropdown-single-price del {
@@ -3224,6 +3419,8 @@ footer .backtop {
   padding: 0px;
   margin-bottom: 30px;
 }
+
+
 
 .cart-in-navbar .cart-icon:hover .cart-dropdown-content {
   display: block;
