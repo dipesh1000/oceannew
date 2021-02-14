@@ -132,6 +132,7 @@ Route::group(
         'prefix' =>'backend',
         'as' =>'admin.',
         'namespace' =>'Backend',
+        'middleware'=>['checkrole','sentinel']
 
     ],function (){
 

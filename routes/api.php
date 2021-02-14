@@ -19,7 +19,6 @@ Route::group(
     ],function () {
         Route::post('/register', 'AuthController@register');
         Route::post('/login', 'AuthController@login');
-        
         Route::get('/books', 'BooksController@index');
         Route::get('/book/{slug}', 'BooksController@getBookBySlug');
 
@@ -30,10 +29,19 @@ Route::group(
         Route::get('/package/{slug}', 'PackageController@getPackageBySlug');
         Route::get('categories','CategoryController@index');
         Route::get('/categories/{slug}','CategoryController@getCategory');
+        Route::get('search','SearchController@search');
+        Route::post('contact-us','ContactController@storeContact');
+        Route::get('authors','PostTypeController@getAuthor');
+        Route::get('distributor','PostTypeController@getDistributors');
+        Route::get('aboutus','PostTypeController@aboutUs');
+        Route::post('forgot-password', 'AuthController@resetPassword');
+        Route::post('update-password','AuthController@updatePassword');
+        
         Route::group(
         [
             'middleware'=>'auth:api'
         ],function(){
+            Route::post('logout','AuthController@logout');
             Route::get('all-course','CourseController@getAllCourses');
             Route::post('/save-course','CourseController@savedCourse');
             Route::get('/delete-course','CourseController@deleteCourse');
@@ -45,7 +53,13 @@ Route::group(
             Route::get('dashboardDetails', 'StudentDashboardController@dashboardDetails');
             Route::post('/feedback', 'FeedbackController@create')->name('feedback.create');
             // Route::post('/feedback/update', 'FeedbackController@update')->name('feedback.update');
+
         });
+
+        //reset password
+        //logout
+        //email notifications
+        //search
       
     }); 
 

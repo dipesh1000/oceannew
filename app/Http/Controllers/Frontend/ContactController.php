@@ -14,6 +14,7 @@ class ContactController extends Controller
     }
     public function storeContact(Request $request)
     {
+    
         $this->validate($request, [
             'name' => 'required',
             'email' => 'required|email',

@@ -21,6 +21,7 @@ use PhpParser\ErrorHandler\Collecting;
 class CourseController extends Controller
 {
     public $course;
+    
     public function __Construct(CourseRepository $course)
     {
         $this->course = $course;
