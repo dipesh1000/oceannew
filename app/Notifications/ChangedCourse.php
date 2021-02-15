@@ -44,7 +44,7 @@ class ChangedCourse extends Notification
     public function toMail($notifiable)
     {
         return (new MailMessage)
-                    ->line('Your Course'.$this->data->title)
+                    ->line('Your Course, '.$this->data->title)
                     ->line('The Course Has Been Changed.')
                     ->line('Thank you for using our application!');
     }
