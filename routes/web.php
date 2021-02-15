@@ -74,6 +74,8 @@ Route::group(
     Route::delete('/remove-from-cart', 'CartController@remove');
     Route::get('/remove-cart-item/{id}','CartController@removeNonAjax');
 });
+
+//sad
 Route::get('forgot-password', 'Auth\ResetPasswordController@getResetForm');
 Route::post('forgot-password', 'Auth\ResetPasswordController@resetPassword');
 Route::get('reset-password/{token}', 'Auth\ResetPasswordController@getResetPasswordForm');
