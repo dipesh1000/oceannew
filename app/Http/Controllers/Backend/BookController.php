@@ -154,7 +154,7 @@ class BookController extends Controller
     public function update(UpdateBookRequest $request)
     {
 
-        try{
+        // try{
             $book = Book::where('id', $request->book_id)->first();
             $book->title = $request->title;
             $book->category_id = $request->category_id;
@@ -184,10 +184,10 @@ class BookController extends Controller
             }else{
                 return redirect()->back()->with('error', 'Error while Updating Book!!');
             }
-        }
-        catch (\Exception $e) {
-            return redirect()->back()->with('error', 'Error while Updating Book!!');
-        }
+        // }
+        // catch (\Exception $e) {
+        //     return redirect()->back()->with('error', 'Error while Updating Book!!');
+        // }
     }
 
     /**

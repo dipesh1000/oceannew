@@ -53,7 +53,7 @@ Route::group(
             Route::get('dashboardDetails', 'StudentDashboardController@dashboardDetails');
             Route::post('/feedback', 'FeedbackController@create')->name('feedback.create');
             // Route::post('/feedback/update', 'FeedbackController@update')->name('feedback.update');
-
+            
         });
 
         //reset password

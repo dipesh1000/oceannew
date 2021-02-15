@@ -109,15 +109,15 @@ class LoginController extends Controller
 
 
     public function activate($userId, $code) {
-
+     
         $user = Sentinel::findById($userId);
-
+  
         if (Activation::complete($user, $code)) {
 
             // Activation was successfull
             Session::flash('success', __('auth.activate_successful'));
 
-            return redirect()->route('admin.login');
+            return redirect()->route('post.login');
 
         } else {
 
@@ -125,7 +125,7 @@ class LoginController extends Controller
             // Activation not found or not completed.
             Session::flash('failed', __('auth.activate_unsuccessful'));
 
-            return redirect()->route('admin.login');
+            return redirect()->route('post.login');
         }
     }
 }

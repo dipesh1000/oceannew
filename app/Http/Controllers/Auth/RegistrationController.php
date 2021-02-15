@@ -26,9 +26,10 @@ class RegistrationController extends Controller
             'password' => 'min:6|required',
             'phone' => 'unique:users'
         ]);
-        $user = Sentinel::registerAndActivate($request->all());
-
-        dispatch(new WelcomeVarifyEmail($user));
+        $user = Sentinel::register($request->all());
+        $activation = Activation::create($user);
+            
+        dispatch(new WelcomeVarifyEmail($user,$activation->code));
         
         return redirect()->route('login'); 
     }

@@ -2,6 +2,7 @@
 
 namespace App\Model;
 
+use App\User;
 use Illuminate\Database\Eloquent\Model;
 
 class MasterOrder extends Model
@@ -39,5 +40,10 @@ class MasterOrder extends Model
     public function orderDetails()
     {
         return $this->hasMany(Order::class, 'master_order_id');
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class,'user_id','id');
     }
 }

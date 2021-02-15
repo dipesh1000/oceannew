@@ -11,6 +11,7 @@ use Illuminate\Http\Request;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Mail;
 
 class OrderController extends Controller
 {
@@ -99,6 +100,7 @@ class OrderController extends Controller
                             // ], 200 );
                     }  
                     DB::commit();
+                     //Mail::to($user->email)->send(new Billing($masterOrder));
                     return view('UserDashboard.order.checkout', compact('courses', 'masterOrder'));
                     }catch (\Throwable $e) {
                         DB::rollback();

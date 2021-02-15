@@ -13,15 +13,18 @@ class WelcomeUserMail extends Mailable
 {
     use Queueable, SerializesModels;
 
-
+    public $data;
+    public $code;
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($data,$code)
     {
         //
+        $this->data = $data;
+        $this->code = $code;
     }
 
     /**
@@ -32,7 +35,8 @@ class WelcomeUserMail extends Mailable
     public function build()
     {
         return $this->from('example@example.com')->markdown('emails.customer.welcome-email', [
-            'url' => 'https://localhost:8000'
+            'url' => 'http://127.0.0.1:8000/user/activate/',
+          
         ]);
     }
 }
