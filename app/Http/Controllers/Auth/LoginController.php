@@ -24,7 +24,6 @@ class LoginController extends Controller
     }
 
     public function adminLoginPost(Request $request){
-
         $request->validate([
             'email'    => 'required|email',
             'password' => 'min:8|required'
@@ -34,7 +33,7 @@ class LoginController extends Controller
             'email'    => $request->email,
             'password' => $request->password,
         );
-
+        // dd(Sentinel::authenticate($credentials));
 
         try {
             if ($user = Sentinel::authenticate($credentials)) {
