@@ -39,10 +39,15 @@ class SingleCourseController extends Controller
     public function getPackage(Request $request)
     {
         $data = $this->course->getPackageById($request->package_id);
+        $items = array();
+        foreach($data->packageItem as $value){
+            $single_item = $value->itemable;
+            array_push($items,$single_item);
+        }
         $user = $this->user;
         $isPurchased = $this->course->isCoursePurchased($data, $user);
         if($isPurchased){
-            return response()->json(['package'=>$data]);
+            return response()->json(['items'=>$items]);
         }else{
             return response()->json(['message'=>"Package hasn't been purchased"]);
         }
@@ -51,11 +56,11 @@ class SingleCourseController extends Controller
     public function getVideo(Request $request)
     {
         $data = $this->course->getVideoById($request->video_id);
-        return $data;
+      
         $user = $this->user;
         $isPurchased = $this->course->isCoursePurchased($data, $user);
         if($isPurchased){
-            return response()->json(['package'=>$data]);
+            return response()->json(['video'=>$data->video]);
         }else{
             return response()->json(['message'=>"Video hasn't been purchased"]);
         }
