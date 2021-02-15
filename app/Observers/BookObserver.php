@@ -40,10 +40,10 @@ class BookObserver
             if($master = $data->master_order)
             {
                 
-                // if($master->status == 3)    
-                // {
+                if($master->status == 1)    
+                {
                     array_push($users,$master->user_id);
-                // }
+                }
             
             }
          

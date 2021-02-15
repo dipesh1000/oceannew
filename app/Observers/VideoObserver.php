@@ -37,22 +37,22 @@ class VideoObserver
             if($master = $data->master_order)
             {
                 
-                // if($master->status == 3)    
-                // {
+                if($master->status == 1)    
+                {
                     array_push($users,$master->user_id);
-                // }
+                }
             
             }
          
         }
-     
+
         if($users)
         {
             $users_data = User::whereIn('id',$users)->get();
             foreach($users_data as $user)
             {
                 ProcessMailCourse::dispatch($user,$video);
-                //$user->notify(new ChangedCourse($book));
+
             }
         }
     }
