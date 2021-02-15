@@ -17280,6 +17280,7 @@ return array(
     'ParagonIE\\ConstantTime\\Encoding' => $vendorDir . '/paragonie/constant_time_encoding/src/Encoding.php',
     'ParagonIE\\ConstantTime\\Hex' => $vendorDir . '/paragonie/constant_time_encoding/src/Hex.php',
     'ParagonIE\\ConstantTime\\RFC4648' => $vendorDir . '/paragonie/constant_time_encoding/src/RFC4648.php',
+    'PersistenceSeeder' => $baseDir . '/database/seeds/PersistenceSeeder.php',
     'PharIo\\Manifest\\Application' => $vendorDir . '/phar-io/manifest/src/values/Application.php',
     'PharIo\\Manifest\\ApplicationName' => $vendorDir . '/phar-io/manifest/src/values/ApplicationName.php',
     'PharIo\\Manifest\\Author' => $vendorDir . '/phar-io/manifest/src/values/Author.php',
