@@ -12,7 +12,8 @@ use Tymon\JWTAuth\Contracts\JWTSubject;
 
 class User  extends EloquentUser implements JWTSubject
 {
-    use AuthAuthenticatable;
+    use AuthAuthenticatable,Notifiable;
+    
     public function getJWTIdentifier()
     {
         return $this->getKey();
