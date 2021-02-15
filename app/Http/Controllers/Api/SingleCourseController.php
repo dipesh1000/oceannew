@@ -28,7 +28,7 @@ class SingleCourseController extends Controller
             $user = $this->user;
             $isPurchased = $this->course->isCoursePurchased($book, $user);
             if($isPurchased){
-                return response()->json(['book'=>asset($book->book)]);
+                return response()->json(['book'=>asset($book)]);
             }else{
                 return response()->json(['message'=>"Book hasn't been purchased"]);
             }
@@ -60,7 +60,7 @@ class SingleCourseController extends Controller
         $user = $this->user;
         $isPurchased = $this->course->isCoursePurchased($data, $user);
         if($isPurchased){
-            return response()->json(['video'=>$data->video]);
+            return response()->json(['video'=>$data]);
         }else{
             return response()->json(['message'=>"Video hasn't been purchased"]);
         }
