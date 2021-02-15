@@ -170,6 +170,8 @@ Route::group(
     Route::post('/book/update', 'BookController@update')->name('book.update');
     Route::post('/book/upload', 'BookController@uploadVideo')->name('book.upload');
 
+    
+
 
 
 

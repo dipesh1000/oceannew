@@ -44,6 +44,26 @@ class CourseRepository implements CourseInterface
         $package->type = 'package';
         return $package;
     }
+
+    public function isCoursePurchased($data,$user)
+    {
+        $order = $data->orderItem()->get();
+        foreach($order as $value)
+        {
+            
+            if($master = $value->master_order)
+            {
+                
+                if($master->status == 1 && $master->user_id == $user->id)    
+                {
+                    return true;
+                }
+            
+            }
+         
+        }
+        return false;
+    }
     // public function getBookModelById($id)
     // {
     //     $book = Book::where('id', $id)->first();

@@ -22,10 +22,11 @@ class CourseController extends Controller
 {
     public $course;
     
-    public function __Construct(CourseRepository $course)
+    public function __construct(CourseRepository $course)
     {
         $this->course = $course;
     }
+    
     public function getAllCourses()
     {
         $courses = [];
