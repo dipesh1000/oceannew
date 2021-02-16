@@ -2,30 +2,30 @@
 
 namespace App\Jobs;
 
-use App\Mail\WelcomeUserMail;
+use App\Notifications\ChangedCourse;
 use App\User;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
-use Illuminate\Support\Facades\Mail;
 
-class WelcomeVarifyEmail implements ShouldQueue
+class ProcessMailCourse implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
     public $user;
-    public $code;
+    public $data;
     /**
      * Create a new job instance.
      *
      * @return void
      */
-    public function __construct(User $user,$code)
+    public function __construct(User $user,$data)
     {
+        //
         $this->user = $user;
-        $this->code = $code;
+        $this->data = $data;
     }
 
     /**
@@ -35,6 +35,7 @@ class WelcomeVarifyEmail implements ShouldQueue
      */
     public function handle()
     {
-        Mail::to($this->user)->send(new WelcomeUserMail($this->user,$this->code));
+        //
+        $this->user->notify(new ChangedCourse($this->data));
     }
 }

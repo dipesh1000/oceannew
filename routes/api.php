@@ -52,8 +52,13 @@ Route::group(
             Route::post('orderStore','OrderController@orderStore');
             Route::get('dashboardDetails', 'StudentDashboardController@dashboardDetails');
             Route::post('/feedback', 'FeedbackController@create')->name('feedback.create');
-            // Route::post('/feedback/update', 'FeedbackController@update')->name('feedback.update');
+            Route::get('getbooks','SingleCourseController@getBook');
+            Route::get('getPackage','SingleCourseController@getPackage');
+            Route::get('getVideo','SingleCourseController@getVideo');
 
+            // Route::post('/feedback/update', 'FeedbackController@update')->name('feedback.update');
+    
+            
         });
 
         //reset password

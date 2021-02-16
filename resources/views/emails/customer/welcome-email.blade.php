@@ -3,7 +3,7 @@ Thanks for Signing up.
 
 Please Varify your email
 
-@component('mail::button', ['url' => $url])
+@component('mail::button', ['url' => $url . $data['id'].'/'.$code])
 Click to verify
 @endcomponent
 

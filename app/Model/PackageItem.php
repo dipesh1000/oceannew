@@ -14,7 +14,8 @@ class PackageItem extends Model
         'itemable_type',
     ];
 
-    public function itemable(){
+    public function itemable()
+    {
 
         return $this->morphTo();
     }
