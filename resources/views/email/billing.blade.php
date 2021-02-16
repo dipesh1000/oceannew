@@ -78,8 +78,13 @@
                                                                         <td>
                                                                             <table class="invoice-items" cellpadding="0"
                                                                                 cellspacing="0">
+                                                                                
                                                                                 <tbody>
-                                                                                    
+                                                                                <tr>
+                                                                                    <th class="alignleft">Title</th>
+                                                                                    <th class="alignright">Price</th>
+
+                                                                                </tr>
                                                                                     @foreach($order->orderDetails as $key => $value)
                                                                                     
                                                                                     <tr>
@@ -105,9 +110,7 @@
                                                             </table>
                                                         </td>
                                                     </tr>
-                                                    <tr>
-                                                        <td class="content-block"> <a href="#">View in browser</a></td>
-                                                    </tr>
+                                                
                                                     <tr>
                                                         <td class="content-block">  {{ env('APP_NAME') }} </td>
                                                     </tr>
@@ -371,7 +374,7 @@
             .invoice td {
                 padding: 5px 0;
             }
-
+            
             .invoice .invoice-items {
                 width: 100%;
             }
@@ -381,6 +384,12 @@
             }
 
             .invoice .invoice-items .total td {
+                border-top: 2px solid #333;
+                border-bottom: 2px solid #333;
+                font-weight: 700;
+            }
+
+            .invoice .invoice-items  th {
                 border-top: 2px solid #333;
                 border-bottom: 2px solid #333;
                 font-weight: 700;

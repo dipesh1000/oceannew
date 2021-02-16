@@ -5,8 +5,7 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use App\Model\MasterOrder;
 use Illuminate\Http\Request;
-use Barryvdh\DomPDF\PDF;
-
+use PDF;
 class DynamicPDFController extends Controller
 {
     //
@@ -22,10 +21,17 @@ class DynamicPDFController extends Controller
     {
         $pdf = \App::make('dompdf.wrapper');
         
-        $order = MasterOrder::with('orderDetails')->first();
-        $view= view('email.billing',compact('order'))->render();
-        $pdf->loadHTML($view);
+       // $order = MasterOrder::with('orderDetails')->where('id',$id)->first();
+        $order =  MasterOrder::with('orderDetails')->first();
+        $html = view('email.billing', compact('order'));
+        // $view= view('email.billing',compact('order'))->render();
         
-        return $pdf->stream();
+        $pdf = PDF::loadView("email.billing",compact('order'));
+        $pdf->setOptions(['defaultFont' => 'sans-serif']);
+        // return $pdf->download('invoice.pdf');
+        return $pdf->stream('invoice.pdf');
+
     }
+
+
 }
