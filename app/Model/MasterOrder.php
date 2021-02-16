@@ -33,10 +33,12 @@ class MasterOrder extends Model
             ? $list[$this->status]
             : $this->status;
     }
+    
     public function orderItem()
     {
         return $this->morphMany(Order::class, 'purchaseble');
     }
+
     public function orderDetails()
     {
         return $this->hasMany(Order::class, 'master_order_id');
