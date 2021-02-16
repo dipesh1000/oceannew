@@ -17,15 +17,13 @@ class DynamicPDFController extends Controller
         return view('email.billing',compact('order'));
     }
 
-    public function pdf()
+    public function pdf($id)
     {
         $pdf = \App::make('dompdf.wrapper');
         
-       // $order = MasterOrder::with('orderDetails')->where('id',$id)->first();
-        $order =  MasterOrder::with('orderDetails')->first();
-        $html = view('email.billing', compact('order'));
+        $order = MasterOrder::with('orderDetails')->where('id',$id)->first();
+            
         // $view= view('email.billing',compact('order'))->render();
-        
         $pdf = PDF::loadView("email.billing",compact('order'));
         $pdf->setOptions(['defaultFont' => 'sans-serif']);
         // return $pdf->download('invoice.pdf');
