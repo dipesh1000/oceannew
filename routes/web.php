@@ -22,7 +22,7 @@ Route::get('/get-book',function(){
     return $fildeData;
 });
 Route::get('dynamic_pdf','Backend\DynamicPDFController@index');
-Route::get('dynamic_pdf/pdf/{id}','Backend\DynamicPDFController@pdf');
+Route::get('dynamic_pdf/pdf/{id}','Backend\DynamicPDFController@pdf')->name('dynamic.pdf')->middleware('sentinel');
 
 Route::group(
     [

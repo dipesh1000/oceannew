@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use App\Model\MasterOrder;
+use Cartalyst\Sentinel\Laravel\Facades\Sentinel;
 use Illuminate\Http\Request;
 use PDF;
 class DynamicPDFController extends Controller
@@ -20,15 +21,14 @@ class DynamicPDFController extends Controller
     public function pdf($id)
     {
         $pdf = \App::make('dompdf.wrapper');
-        
-        $order = MasterOrder::with('orderDetails')->where('id',$id)->first();
+        $user = Sentinel::getUser();
+        $order = MasterOrder::with('orderDetails')->where(['id'=>$id,'user_id'=>$user->id])->first();
         if($order)
         {
         // $view= view('email.billing',compact('order'))->render();
         $pdf = PDF::loadView("email.billing",compact('order'));
         $pdf->setOptions(['defaultFont' => 'sans-serif']);
-        // return $pdf->download('invoice.pdf');
-        return $pdf->stream('invoice.pdf');
+        return $pdf->download('invoice.pdf');
         }
         else
         {
