@@ -22,12 +22,19 @@ class DynamicPDFController extends Controller
         $pdf = \App::make('dompdf.wrapper');
         
         $order = MasterOrder::with('orderDetails')->where('id',$id)->first();
-            
+        if($order)
+        {
         // $view= view('email.billing',compact('order'))->render();
         $pdf = PDF::loadView("email.billing",compact('order'));
         $pdf->setOptions(['defaultFont' => 'sans-serif']);
         // return $pdf->download('invoice.pdf');
         return $pdf->stream('invoice.pdf');
+        }
+        else
+        {
+           return "No Masterorder Find";
+        }
+       
 
     }
 
