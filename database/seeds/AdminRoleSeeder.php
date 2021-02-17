@@ -1,6 +1,7 @@
 <?php
 
 use App\User;
+use Cartalyst\Sentinel\Laravel\Facades\Activation;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
@@ -22,7 +23,14 @@ class AdminRoleSeeder extends Seeder
         ]);
         if($role)
         {
-            User::where('email','admin@app.com')->first()->roles()->attach(1);
+            $user =   User::where('email','admin@app.com')->first();
+            $user->roles()->attach(1);
+            $activation = Activation::completed($user);
+            if(!$activation)
+            {
+                $activation = Activation::create($user);
+                Activation::complete($user, $activation->code);
+            }
         }
    
     }

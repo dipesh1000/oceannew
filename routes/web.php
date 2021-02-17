@@ -21,6 +21,8 @@ Route::get('/get-book',function(){
     $fildeData = Storage::get($book->book);
     return $fildeData;
 });
+Route::get('dynamic_pdf','Backend\DynamicPDFController@index');
+Route::get('dynamic_pdf/pdf/{id}','Backend\DynamicPDFController@pdf')->name('dynamic.pdf')->middleware('sentinel');
 
 Route::group(
     [
@@ -264,5 +266,7 @@ Route::group(
 
     Route::get('analytic', 'AnalyticController@index')->name('analytic');
     Route::get('analytic/realtime', 'AnalyticController@getRealTimeVisitor')->name('analytic.realtime');
+    
+    //dynamic pdf
 
     });

@@ -51,7 +51,7 @@
                                       <td>
                                           <a href="{{ route('printInvioce', $orderItem->id) }}" class="btn printInvoice btn-outline-dark btn-sm" title="print invoice"><i class="fa fa-print"></i></a>
                                           <a href="{{ route('viewInvoice', $orderItem->id) }}" target="_blank" class="btn btn-outline-dark btn-sm" title="view"><i class="fa fa-eye"></i></a>
-                                          <button type="button" class="btn btn-outline-dark btn-sm" title="download"><i class="fa fa-download"></i></button>
+                                          <a href="{{route('dynamic.pdf',$orderItem->id)}}" class="btn btn-outline-dark btn-sm" title="download"><i class="fa fa-download"></i></a>
                                       </td>
                                     </tr>
                                     @endforeach

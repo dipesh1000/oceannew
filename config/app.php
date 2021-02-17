@@ -180,6 +180,7 @@ return [
         App\Providers\RepositoryServiceProvider::class,
         Cartalyst\Sentinel\Laravel\SentinelServiceProvider::class,
         'Intervention\Image\ImageServiceProvider',
+        Barryvdh\DomPDF\ServiceProvider::class,
 
 
     ],
@@ -241,6 +242,7 @@ return [
         'Toastr'  => Brian2694\Toastr\Facades\Toastr::class,
         'JWTAuth' => Tymon\JWTAuth\Facades\JWTAuth::class, 
         'JWTFactory' => Tymon\JWTAuth\Facades\JWTFactory::class,
+        'PDF' => Barryvdh\DomPDF\Facade::class,
 
     ],
 
