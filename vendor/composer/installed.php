@@ -6,7 +6,7 @@
     'aliases' => 
     array (
     ),
-    'reference' => '29edbcd72849396244e8dd674b330450181459ac',
+    'reference' => 'f56cad91cfef27fdeb4afc062cd66069a6186be2',
     'name' => 'laravel/laravel',
   ),
   'versions' => 
@@ -46,6 +46,15 @@
       array (
       ),
       'reference' => '786477b54f637a57a80b3de387fb3dcdba5dd940',
+    ),
+    'buzz/laravel-google-captcha' => 
+    array (
+      'pretty_version' => 'v2.3.3',
+      'version' => '2.3.3.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'e37702c74e12380a531216aea5e98ecf57be6b17',
     ),
     'cartalyst/sentinel' => 
     array (
@@ -259,14 +268,23 @@
       ),
       'reference' => 'b346c07de6613e26443d7b4830e5e1933b830dc4',
     ),
-    'guzzlehttp/guzzle' => 
+    'google/recaptcha' => 
     array (
-      'pretty_version' => '6.5.5',
-      'version' => '6.5.5.0',
+      'pretty_version' => '1.2.4',
+      'version' => '1.2.4.0',
       'aliases' => 
       array (
       ),
-      'reference' => '9d4290de1cfd701f38099ef7e183b64b4b7b0c5e',
+      'reference' => '614f25a9038be4f3f2da7cbfd778dc5b357d2419',
+    ),
+    'guzzlehttp/guzzle' => 
+    array (
+      'pretty_version' => '7.2.0',
+      'version' => '7.2.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '0aa74dfb41ae110835923ef10a9d803a22d50e79',
     ),
     'guzzlehttp/promises' => 
     array (
@@ -539,7 +557,7 @@
       'aliases' => 
       array (
       ),
-      'reference' => '29edbcd72849396244e8dd674b330450181459ac',
+      'reference' => 'f56cad91cfef27fdeb4afc062cd66069a6186be2',
     ),
     'laravel/tinker' => 
     array (
@@ -857,6 +875,22 @@
       'reference' => 'dbefd12671e8a14ec7f180cab83036ed26714bb0',
     ),
     'psr/event-dispatcher-implementation' => 
+    array (
+      'provided' => 
+      array (
+        0 => '1.0',
+      ),
+    ),
+    'psr/http-client' => 
+    array (
+      'pretty_version' => '1.0.1',
+      'version' => '1.0.1.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '2dfb5f6c5eff0e91e20e913f8c5452ed95b86621',
+    ),
+    'psr/http-client-implementation' => 
     array (
       'provided' => 
       array (

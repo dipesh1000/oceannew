@@ -101,12 +101,12 @@
                                     @endphp
                                     @if($sliderMeta != null) 
                                         @if(getGlobalPostMetaByKeys($sliderMeta->gobal_post_id, $sliderMeta->key))
-                                        <div class="title">{{ $item->title }}</div>
-                                        @else
                                             <div class="title"></div>
+                                        @else
+                                            <div class="title">{{ $item->title }}</div>
                                         @endif
                                     @endif
-                                    <div class="subtitle">
+                                      <div class="subtitle">
                                         {!! $item->post_content !!} 
                                     </div>
                                 </div>

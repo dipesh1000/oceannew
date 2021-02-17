@@ -21,6 +21,17 @@
       'Cart' => 'Gloudemans\\Shoppingcart\\Facades\\Cart',
     ),
   ),
+  'buzz/laravel-google-captcha' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Buzz\\LaravelGoogleCaptcha\\CaptchaServiceProvider',
+    ),
+    'aliases' => 
+    array (
+      'Captcha' => 'Buzz\\LaravelGoogleCaptcha\\CaptchaFacade',
+    ),
+  ),
   'cartalyst/sentinel' => 
   array (
     'providers' => 

@@ -57,7 +57,6 @@
                             
                         </form>
                     </div>
-                    {!! NoCaptcha::renderJs() !!}
                 </div>
                 <div class="col-lg-4">
                    <div class="contact_container">
