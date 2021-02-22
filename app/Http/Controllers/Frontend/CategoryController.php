@@ -9,6 +9,8 @@ use App\Model\Book;
 use App\Model\Video;
 use Cartalyst\Sentinel\Laravel\Facades\Sentinel;
 
+
+
 class CategoryController extends Controller
 {
     public function index()
